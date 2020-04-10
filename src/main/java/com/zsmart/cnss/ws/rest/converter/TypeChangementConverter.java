@@ -1,52 +1,52 @@
 package com.zsmart.cnss.ws.rest.converter;
-
+ 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.zsmart.cnss.service.util.*;
-import com.zsmart.cnss.bean.TypeChangement;
-import com.zsmart.cnss.ws.rest.vo.TypeChangementVo;
+import com.zsmart.cnss.bean.TypeChangement; 
+import com.zsmart.cnss.ws.rest.vo.TypeChangementVo; 
 
-@Component
-public class TypeChangementConverter extends AbstractConverter<TypeChangement, TypeChangementVo> {
+ @Component 
+public class TypeChangementConverter extends AbstractConverter<TypeChangement,TypeChangementVo>{ 
 
-    @Override
-    public TypeChangement toItem(TypeChangementVo vo) {
-        if (vo == null) {
-            return null;
-        } else {
-            TypeChangement item = new TypeChangement();
 
-            if (StringUtil.isNotEmpty(vo.getLibelle())) {
-                item.setLibelle(vo.getLibelle());
-            }
+ @Override 
+ public TypeChangement toItem(TypeChangementVo vo) {
+ if (vo == null) {
+    return null;
+      } else {
+TypeChangement item = new TypeChangement();
 
-            if (vo.getId() != null) {
-                item.setId(NumberUtil.toLong(vo.getId()));
-            }
+ if (StringUtil.isNotEmpty(vo.getLibelle())) {
+ item.setLibelle(vo.getLibelle());
+} 
 
-            return item;
-        }
-    }
+ if (vo.getId() != null) {
+ item.setId(NumberUtil.toLong(vo.getId()));
+} 
 
-    @Override
-    public TypeChangementVo toVo(TypeChangement item) {
-        if (item == null) {
-            return null;
-        } else {
-            TypeChangementVo vo = new TypeChangementVo();
+return item;
+ }
+ }
 
-            if (StringUtil.isNotEmpty(item.getLibelle())) {
-                vo.setLibelle(item.getLibelle());
-            }
+  @Override 
+ public TypeChangementVo toVo(TypeChangement item) {
+ if (item == null) {
+    return null;
+      } else {
+TypeChangementVo vo = new TypeChangementVo();
 
-            if (item.getId() != null) {
-                vo.setId(NumberUtil.toString(item.getId()));
-            }
+ if (StringUtil.isNotEmpty(item.getLibelle())) {
+ vo.setLibelle(item.getLibelle());
+} 
 
-            return vo;
-        }
-    }
+ if (item.getId() != null) {
+ vo.setId(NumberUtil.toString(item.getId()));
+} 
 
-    public void init() {
-    }
+return vo;
+ }
+ }
+public void init() { 
 }
+ } 

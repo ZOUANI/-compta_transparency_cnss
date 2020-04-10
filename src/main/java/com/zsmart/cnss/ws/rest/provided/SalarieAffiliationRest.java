@@ -1,4 +1,5 @@
-package com.zsmart.cnss.ws.rest.provided;
+package com.zsmart.cnss.ws.rest.provided ;
+
 
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,49 +16,46 @@ import com.zsmart.cnss.service.facade.SalarieAffiliationService;
 import com.zsmart.cnss.bean.SalarieAffiliation;
 import com.zsmart.cnss.ws.rest.vo.SalarieAffiliationVo;
 import com.zsmart.cnss.ws.rest.converter.SalarieAffiliationConverter;
-import com.zsmart.cnss.service.util.*;
-
+import com.zsmart.cnss.service.util.* ;
 @RestController
 @RequestMapping("/cnss/SalarieAffiliation")
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class SalarieAffiliationRest {
 
-    @Autowired
-    private SalarieAffiliationService salarieAffiliationService;
+ @Autowired 
+ private SalarieAffiliationService salarieAffiliationService;
 
-    @Autowired
-    private SalarieAffiliationConverter salarieAffiliationConverter;
+ @Autowired 
+private SalarieAffiliationConverter salarieAffiliationConverter ;
 
-    @PostMapping("/")
-    public SalarieAffiliationVo save(@RequestBody SalarieAffiliationVo salarieAffiliationVo) {
-        SalarieAffiliation salarieAffiliation = salarieAffiliationConverter.toItem(salarieAffiliationVo);
-        return salarieAffiliationConverter.toVo(salarieAffiliationService.save(salarieAffiliation));
-    }
+@PostMapping("/")
+public SalarieAffiliationVo save(@RequestBody SalarieAffiliationVo salarieAffiliationVo){
+SalarieAffiliation salarieAffiliation= salarieAffiliationConverter.toItem(salarieAffiliationVo);
+return salarieAffiliationConverter.toVo(salarieAffiliationService.save(salarieAffiliation));
+}
+@DeleteMapping("/{id}")
+public void deleteById(@PathVariable Long id){
+salarieAffiliationService.deleteById(id);
+}
+@GetMapping("/")
+public List<SalarieAffiliationVo> findAll(){
+return salarieAffiliationConverter.toVo(salarieAffiliationService.findAll());
+}
 
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id) {
-        salarieAffiliationService.deleteById(id);
-    }
+ public SalarieAffiliationConverter getSalarieAffiliationConverter(){
+return salarieAffiliationConverter;
+}
+ 
+ public void setSalarieAffiliationConverter(SalarieAffiliationConverter salarieAffiliationConverter){
+this.salarieAffiliationConverter=salarieAffiliationConverter;
+}
 
-    @GetMapping("/")
-    public List<SalarieAffiliationVo> findAll() {
-        return salarieAffiliationConverter.toVo(salarieAffiliationService.findAll());
-    }
-
-    public SalarieAffiliationConverter getSalarieAffiliationConverter() {
-        return salarieAffiliationConverter;
-    }
-
-    public void setSalarieAffiliationConverter(SalarieAffiliationConverter salarieAffiliationConverter) {
-        this.salarieAffiliationConverter = salarieAffiliationConverter;
-    }
-
-    public SalarieAffiliationService getSalarieAffiliationService() {
-        return salarieAffiliationService;
-    }
-
-    public void setSalarieAffiliationService(SalarieAffiliationService salarieAffiliationService) {
-        this.salarieAffiliationService = salarieAffiliationService;
-    }
+ public SalarieAffiliationService getSalarieAffiliationService(){
+return salarieAffiliationService;
+}
+ 
+ public void setSalarieAffiliationService(SalarieAffiliationService salarieAffiliationService){
+this.salarieAffiliationService=salarieAffiliationService;
+}
 
 }

@@ -3,79 +3,85 @@ package com.zsmart.cnss.ws.rest.vo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImmatriculationDemandeVo {
 
-    private String id;
-    private String numImmatriculation;
-    private String dateDemandeImmatriculation;
-    private String dateDemandeImmatriculationMin;
-    private String dateDemandeImmatriculationMax;
-    private AffilieVo affilieVo;
-    private ImmatriculationDemandeEtatVo immatriculationDemandeEtatVo;
-    private List<SalarieImmatriculationVo> salarieImmatriculationsVo;
+public class ImmatriculationDemandeVo{
 
-    public String getId() {
-        return id;
-    }
+private String id ;
+private String numImmatriculation ;
+private String dateDemandeImmatriculation;
+private String dateDemandeImmatriculationMin ;
+private String dateDemandeImmatriculationMax ;
+private AffilieVo affilieVo ;
+private ImmatriculationDemandeEtatVo immatriculationDemandeEtatVo ;
+private List<SalarieImmatriculationVo>salarieImmatriculationsVo;
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
-    public String getNumImmatriculation() {
-        return numImmatriculation;
-    }
 
-    public void setNumImmatriculation(String numImmatriculation) {
-        this.numImmatriculation = numImmatriculation;
-    }
+public String  getId(){
+    return id;
+}
 
-    public String getDateDemandeImmatriculation() {
-        return dateDemandeImmatriculation;
-    }
+public void setId(String  id){
+     this.id = id;
+}
 
-    public void setDateDemandeImmatriculation(String dateDemandeImmatriculation) {
-        this.dateDemandeImmatriculation = dateDemandeImmatriculation;
-    }
+public String  getNumImmatriculation(){
+    return numImmatriculation;
+}
 
-    public String getDateDemandeImmatriculationMin() {
-        return dateDemandeImmatriculationMin;
-    }
+public void setNumImmatriculation(String  numImmatriculation){
+     this.numImmatriculation = numImmatriculation;
+}
 
-    public void setDateDemandeImmatriculationMin(String dateDemandeImmatriculationMin) {
-        this.dateDemandeImmatriculationMin = dateDemandeImmatriculationMin;
-    }
+public String  getDateDemandeImmatriculation(){
+    return dateDemandeImmatriculation;
+}
 
-    public String getDateDemandeImmatriculationMax() {
-        return dateDemandeImmatriculationMax;
-    }
+public void setDateDemandeImmatriculation(String  dateDemandeImmatriculation){
+     this.dateDemandeImmatriculation = dateDemandeImmatriculation;
+}
 
-    public void setDateDemandeImmatriculationMax(String dateDemandeImmatriculationMax) {
-        this.dateDemandeImmatriculationMax = dateDemandeImmatriculationMax;
-    }
+public String  getDateDemandeImmatriculationMin(){
+    return dateDemandeImmatriculationMin;
+}
 
-    public AffilieVo getAffilieVo() {
-        return affilieVo;
-    }
+public void setDateDemandeImmatriculationMin(String  dateDemandeImmatriculationMin){
+     this.dateDemandeImmatriculationMin = dateDemandeImmatriculationMin;
+}
 
-    public void setAffilieVo(AffilieVo affilieVo) {
-        this.affilieVo = affilieVo;
-    }
+public String  getDateDemandeImmatriculationMax(){
+    return dateDemandeImmatriculationMax;
+}
 
-    public ImmatriculationDemandeEtatVo getImmatriculationDemandeEtatVo() {
-        return immatriculationDemandeEtatVo;
-    }
+public void setDateDemandeImmatriculationMax(String  dateDemandeImmatriculationMax){
+     this.dateDemandeImmatriculationMax = dateDemandeImmatriculationMax;
+}
 
-    public void setImmatriculationDemandeEtatVo(ImmatriculationDemandeEtatVo immatriculationDemandeEtatVo) {
-        this.immatriculationDemandeEtatVo = immatriculationDemandeEtatVo;
-    }
+public AffilieVo  getAffilieVo (){
+    return affilieVo ;
+}
 
-    public List<SalarieImmatriculationVo> getSalarieImmatriculationsVo() {
-        return salarieImmatriculationsVo;
-    }
+public void setAffilieVo (AffilieVo  affilieVo ){
+     this.affilieVo  = affilieVo ;
+}
 
-    public void setSalarieImmatriculationsVo(List<SalarieImmatriculationVo> salarieImmatriculationsVo) {
-        this.salarieImmatriculationsVo = salarieImmatriculationsVo;
-    }
+public ImmatriculationDemandeEtatVo  getImmatriculationDemandeEtatVo (){
+    return immatriculationDemandeEtatVo ;
+}
+
+public void setImmatriculationDemandeEtatVo (ImmatriculationDemandeEtatVo  immatriculationDemandeEtatVo ){
+     this.immatriculationDemandeEtatVo  = immatriculationDemandeEtatVo ;
+}
+
+public List<SalarieImmatriculationVo> getSalarieImmatriculationsVo(){
+    return salarieImmatriculationsVo;
+}
+
+public void setSalarieImmatriculationsVo(List<SalarieImmatriculationVo> salarieImmatriculationsVo){
+     this.salarieImmatriculationsVo = salarieImmatriculationsVo;
+}
+
+
+
 
 }

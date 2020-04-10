@@ -1,183 +1,196 @@
 package com.zsmart.cnss.ws.rest.converter;
-
+ 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.zsmart.cnss.service.util.*;
-import com.zsmart.cnss.bean.Salarie;
-import com.zsmart.cnss.ws.rest.vo.SalarieVo;
+import com.zsmart.cnss.bean.Salarie; 
+import com.zsmart.cnss.ws.rest.vo.SalarieVo; 
 
-@Component
-public class SalarieConverter extends AbstractConverter<Salarie, SalarieVo> {
+ @Component 
+public class SalarieConverter extends AbstractConverter<Salarie,SalarieVo>{ 
 
-    private boolean dernierAffilie;
+private boolean typeSalarie; 
 
-    @Autowired
-    private AffilieConverter affilieConverter;
-    private boolean immatriculationDemande;
+ @Autowired
+ private TypeSalarieConverter typeSalarieConverter ; 
+private boolean dernierAffilie; 
 
-    @Autowired
-    private ImmatriculationDemandeConverter immatriculationDemandeConverter;
-    private boolean immatriculationChangements;
+ @Autowired
+ private AffilieConverter affilieConverter ; 
+private boolean immatriculationDemande; 
 
-    @Autowired
-    private ImmatriculationChangementConverter immatriculationChangementConverter;
+ @Autowired
+ private ImmatriculationDemandeConverter immatriculationDemandeConverter ; 
+private boolean immatriculationChangements; 
 
-    @Override
-    public Salarie toItem(SalarieVo vo) {
-        if (vo == null) {
-            return null;
-        } else {
-            Salarie item = new Salarie();
+ @Autowired
+ private ImmatriculationChangementConverter immatriculationChangementConverter ; 
 
-            if (dernierAffilie && vo.getDernierAffilieVo() != null) {
-                item.setDernierAffilie(affilieConverter.toItem(vo.getDernierAffilieVo()));
-            }
+ @Override 
+ public Salarie toItem(SalarieVo vo) {
+ if (vo == null) {
+    return null;
+      } else {
+Salarie item = new Salarie();
 
-            if (immatriculationDemande && vo.getImmatriculationDemandeVo() != null) {
-                item.setImmatriculationDemande(immatriculationDemandeConverter.toItem(vo.getImmatriculationDemandeVo()));
-            }
+ if(typeSalarie&& vo.getTypeSalarieVo() != null) {
+ item.setTypeSalarie(typeSalarieConverter.toItem(vo.getTypeSalarieVo()));
+} 
+ 
+ if(dernierAffilie&& vo.getDernierAffilieVo() != null) {
+ item.setDernierAffilie(affilieConverter.toItem(vo.getDernierAffilieVo()));
+} 
+ 
+ if(immatriculationDemande&& vo.getImmatriculationDemandeVo() != null) {
+ item.setImmatriculationDemande(immatriculationDemandeConverter.toItem(vo.getImmatriculationDemandeVo()));
+} 
+ 
+ if (StringUtil.isNotEmpty(vo.getNom())) {
+ item.setNom(vo.getNom());
+} 
 
-            if (StringUtil.isNotEmpty(vo.getNom())) {
-                item.setNom(vo.getNom());
-            }
+ if (StringUtil.isNotEmpty(vo.getPrenom())) {
+ item.setPrenom(vo.getPrenom());
+} 
 
-            if (StringUtil.isNotEmpty(vo.getPrenom())) {
-                item.setPrenom(vo.getPrenom());
-            }
+ if (StringUtil.isNotEmpty(vo.getSexe())) {
+ item.setSexe(vo.getSexe());
+} 
 
-            if (StringUtil.isNotEmpty(vo.getSexe())) {
-                item.setSexe(vo.getSexe());
-            }
+ if (StringUtil.isNotEmpty(vo.getNationalite())) {
+ item.setNationalite(vo.getNationalite());
+} 
 
-            if (StringUtil.isNotEmpty(vo.getNationalite())) {
-                item.setNationalite(vo.getNationalite());
-            }
+ if (StringUtil.isNotEmpty(vo.getCin())) {
+ item.setCin(vo.getCin());
+} 
 
-            if (StringUtil.isNotEmpty(vo.getCin())) {
-                item.setCin(vo.getCin());
-            }
+ if (StringUtil.isNotEmpty(vo.getAdresse())) {
+ item.setAdresse(vo.getAdresse());
+} 
 
-            if (StringUtil.isNotEmpty(vo.getAdresse())) {
-                item.setAdresse(vo.getAdresse());
-            }
+ if (StringUtil.isNotEmpty(vo.getCodePostal())) {
+ item.setCodePostal(vo.getCodePostal());
+} 
 
-            if (StringUtil.isNotEmpty(vo.getCodePostal())) {
-                item.setCodePostal(vo.getCodePostal());
-            }
+ if (StringUtil.isNotEmpty(vo.getVille())) {
+ item.setVille(vo.getVille());
+} 
 
-            if (StringUtil.isNotEmpty(vo.getVille())) {
-                item.setVille(vo.getVille());
-            }
+ if (StringUtil.isNotEmpty(vo.getEmail())) {
+ item.setEmail(vo.getEmail());
+} 
 
-            if (StringUtil.isNotEmpty(vo.getEmail())) {
-                item.setEmail(vo.getEmail());
-            }
+ if (StringUtil.isNotEmpty(vo.getTelNum())) {
+ item.setTelNum(vo.getTelNum());
+} 
 
-            if (StringUtil.isNotEmpty(vo.getTelNum())) {
-                item.setTelNum(vo.getTelNum());
-            }
+ if (StringUtil.isNotEmpty(vo.getNumImmatriculation())) {
+ item.setNumImmatriculation(vo.getNumImmatriculation());
+} 
 
-            if (StringUtil.isNotEmpty(vo.getNumImmatriculation())) {
-                item.setNumImmatriculation(vo.getNumImmatriculation());
-            }
+ if (vo.getId() != null) {
+ item.setId(NumberUtil.toLong(vo.getId()));
+} 
 
-            if (vo.getId() != null) {
-                item.setId(NumberUtil.toLong(vo.getId()));
-            }
+ if (vo.getDateNaissance() != null) {
+ item.setDateNaissance(DateUtil.parse(vo.getDateNaissance()));
+} 
 
-            if (vo.getDateNaissance() != null) {
-                item.setDateNaissance(DateUtil.parse(vo.getDateNaissance()));
-            }
+ if (ListUtil.isNotEmpty(vo.getImmatriculationChangementsVo ()) && immatriculationChangements) {
+ item.setImmatriculationChangements(immatriculationChangementConverter.toItem(vo.getImmatriculationChangementsVo())); 
+} 
 
-            if (ListUtil.isNotEmpty(vo.getImmatriculationChangementsVo()) && immatriculationChangements) {
-                item.setImmatriculationChangements(immatriculationChangementConverter.toItem(vo.getImmatriculationChangementsVo()));
-            }
+return item;
+ }
+ }
 
-            return item;
-        }
-    }
+  @Override 
+ public SalarieVo toVo(Salarie item) {
+ if (item == null) {
+    return null;
+      } else {
+SalarieVo vo = new SalarieVo();
 
-    @Override
-    public SalarieVo toVo(Salarie item) {
-        if (item == null) {
-            return null;
-        } else {
-            SalarieVo vo = new SalarieVo();
+ if(typeSalarie&& item.getTypeSalarie() != null) {
+ vo.setTypeSalarieVo(typeSalarieConverter.toVo(item.getTypeSalarie()));
+} 
+ 
+ if(dernierAffilie&& item.getDernierAffilie() != null) {
+ vo.setDernierAffilieVo(affilieConverter.toVo(item.getDernierAffilie()));
+} 
+ 
+ if(immatriculationDemande&& item.getImmatriculationDemande() != null) {
+ vo.setImmatriculationDemandeVo(immatriculationDemandeConverter.toVo(item.getImmatriculationDemande()));
+} 
+ 
+ if (StringUtil.isNotEmpty(item.getNom())) {
+ vo.setNom(item.getNom());
+} 
 
-            if (dernierAffilie && item.getDernierAffilie() != null) {
-                vo.setDernierAffilieVo(affilieConverter.toVo(item.getDernierAffilie()));
-            }
+ if (StringUtil.isNotEmpty(item.getPrenom())) {
+ vo.setPrenom(item.getPrenom());
+} 
 
-            if (immatriculationDemande && item.getImmatriculationDemande() != null) {
-                vo.setImmatriculationDemandeVo(immatriculationDemandeConverter.toVo(item.getImmatriculationDemande()));
-            }
+ if (StringUtil.isNotEmpty(item.getSexe())) {
+ vo.setSexe(item.getSexe());
+} 
 
-            if (StringUtil.isNotEmpty(item.getNom())) {
-                vo.setNom(item.getNom());
-            }
+ if (StringUtil.isNotEmpty(item.getNationalite())) {
+ vo.setNationalite(item.getNationalite());
+} 
 
-            if (StringUtil.isNotEmpty(item.getPrenom())) {
-                vo.setPrenom(item.getPrenom());
-            }
+ if (StringUtil.isNotEmpty(item.getCin())) {
+ vo.setCin(item.getCin());
+} 
 
-            if (StringUtil.isNotEmpty(item.getSexe())) {
-                vo.setSexe(item.getSexe());
-            }
+ if (StringUtil.isNotEmpty(item.getAdresse())) {
+ vo.setAdresse(item.getAdresse());
+} 
 
-            if (StringUtil.isNotEmpty(item.getNationalite())) {
-                vo.setNationalite(item.getNationalite());
-            }
+ if (StringUtil.isNotEmpty(item.getCodePostal())) {
+ vo.setCodePostal(item.getCodePostal());
+} 
 
-            if (StringUtil.isNotEmpty(item.getCin())) {
-                vo.setCin(item.getCin());
-            }
+ if (StringUtil.isNotEmpty(item.getVille())) {
+ vo.setVille(item.getVille());
+} 
 
-            if (StringUtil.isNotEmpty(item.getAdresse())) {
-                vo.setAdresse(item.getAdresse());
-            }
+ if (StringUtil.isNotEmpty(item.getEmail())) {
+ vo.setEmail(item.getEmail());
+} 
 
-            if (StringUtil.isNotEmpty(item.getCodePostal())) {
-                vo.setCodePostal(item.getCodePostal());
-            }
+ if (StringUtil.isNotEmpty(item.getTelNum())) {
+ vo.setTelNum(item.getTelNum());
+} 
 
-            if (StringUtil.isNotEmpty(item.getVille())) {
-                vo.setVille(item.getVille());
-            }
+ if (StringUtil.isNotEmpty(item.getNumImmatriculation())) {
+ vo.setNumImmatriculation(item.getNumImmatriculation());
+} 
 
-            if (StringUtil.isNotEmpty(item.getEmail())) {
-                vo.setEmail(item.getEmail());
-            }
+ if (item.getId() != null) {
+ vo.setId(NumberUtil.toString(item.getId()));
+} 
 
-            if (StringUtil.isNotEmpty(item.getTelNum())) {
-                vo.setTelNum(item.getTelNum());
-            }
+ if (item.getDateNaissance() != null) {
+ vo.setDateNaissance(DateUtil.formateDate(item.getDateNaissance()));
+} 
 
-            if (StringUtil.isNotEmpty(item.getNumImmatriculation())) {
-                vo.setNumImmatriculation(item.getNumImmatriculation());
-            }
+ if(ListUtil.isNotEmpty(item.getImmatriculationChangements()) && immatriculationChangements) {
+ vo.setImmatriculationChangementsVo(immatriculationChangementConverter.toVo(item.getImmatriculationChangements()));
+} 
 
-            if (item.getId() != null) {
-                vo.setId(NumberUtil.toString(item.getId()));
-            }
+return vo;
+ }
+ }
+public void init() { 
 
-            if (item.getDateNaissance() != null) {
-                vo.setDateNaissance(DateUtil.formateDate(item.getDateNaissance()));
-            }
+typeSalarie = true; 
 
-            if (ListUtil.isNotEmpty(item.getImmatriculationChangements()) && immatriculationChangements) {
-                vo.setImmatriculationChangementsVo(immatriculationChangementConverter.toVo(item.getImmatriculationChangements()));
-            }
+dernierAffilie = true; 
 
-            return vo;
-        }
-    }
+immatriculationDemande = true; 
 
-    public void init() {
-
-        dernierAffilie = true;
-
-        immatriculationDemande = true;
-
-        immatriculationChangements = true;
-    }
+immatriculationChangements = true; 
 }
+ } 

@@ -1,4 +1,5 @@
-package com.zsmart.cnss.ws.rest.provided;
+package com.zsmart.cnss.ws.rest.provided ;
+
 
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,49 +16,46 @@ import com.zsmart.cnss.service.facade.ObjetChangementAffiliationService;
 import com.zsmart.cnss.bean.ObjetChangementAffiliation;
 import com.zsmart.cnss.ws.rest.vo.ObjetChangementAffiliationVo;
 import com.zsmart.cnss.ws.rest.converter.ObjetChangementAffiliationConverter;
-import com.zsmart.cnss.service.util.*;
-
+import com.zsmart.cnss.service.util.* ;
 @RestController
 @RequestMapping("/cnss/ObjetChangementAffiliation")
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class ObjetChangementAffiliationRest {
 
-    @Autowired
-    private ObjetChangementAffiliationService objetChangementAffiliationService;
+ @Autowired 
+ private ObjetChangementAffiliationService objetChangementAffiliationService;
 
-    @Autowired
-    private ObjetChangementAffiliationConverter objetChangementAffiliationConverter;
+ @Autowired 
+private ObjetChangementAffiliationConverter objetChangementAffiliationConverter ;
 
-    @PostMapping("/")
-    public ObjetChangementAffiliationVo save(@RequestBody ObjetChangementAffiliationVo objetChangementAffiliationVo) {
-        ObjetChangementAffiliation objetChangementAffiliation = objetChangementAffiliationConverter.toItem(objetChangementAffiliationVo);
-        return objetChangementAffiliationConverter.toVo(objetChangementAffiliationService.save(objetChangementAffiliation));
-    }
+@PostMapping("/")
+public ObjetChangementAffiliationVo save(@RequestBody ObjetChangementAffiliationVo objetChangementAffiliationVo){
+ObjetChangementAffiliation objetChangementAffiliation= objetChangementAffiliationConverter.toItem(objetChangementAffiliationVo);
+return objetChangementAffiliationConverter.toVo(objetChangementAffiliationService.save(objetChangementAffiliation));
+}
+@DeleteMapping("/{id}")
+public void deleteById(@PathVariable Long id){
+objetChangementAffiliationService.deleteById(id);
+}
+@GetMapping("/")
+public List<ObjetChangementAffiliationVo> findAll(){
+return objetChangementAffiliationConverter.toVo(objetChangementAffiliationService.findAll());
+}
 
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id) {
-        objetChangementAffiliationService.deleteById(id);
-    }
+ public ObjetChangementAffiliationConverter getObjetChangementAffiliationConverter(){
+return objetChangementAffiliationConverter;
+}
+ 
+ public void setObjetChangementAffiliationConverter(ObjetChangementAffiliationConverter objetChangementAffiliationConverter){
+this.objetChangementAffiliationConverter=objetChangementAffiliationConverter;
+}
 
-    @GetMapping("/")
-    public List<ObjetChangementAffiliationVo> findAll() {
-        return objetChangementAffiliationConverter.toVo(objetChangementAffiliationService.findAll());
-    }
-
-    public ObjetChangementAffiliationConverter getObjetChangementAffiliationConverter() {
-        return objetChangementAffiliationConverter;
-    }
-
-    public void setObjetChangementAffiliationConverter(ObjetChangementAffiliationConverter objetChangementAffiliationConverter) {
-        this.objetChangementAffiliationConverter = objetChangementAffiliationConverter;
-    }
-
-    public ObjetChangementAffiliationService getObjetChangementAffiliationService() {
-        return objetChangementAffiliationService;
-    }
-
-    public void setObjetChangementAffiliationService(ObjetChangementAffiliationService objetChangementAffiliationService) {
-        this.objetChangementAffiliationService = objetChangementAffiliationService;
-    }
+ public ObjetChangementAffiliationService getObjetChangementAffiliationService(){
+return objetChangementAffiliationService;
+}
+ 
+ public void setObjetChangementAffiliationService(ObjetChangementAffiliationService objetChangementAffiliationService){
+this.objetChangementAffiliationService=objetChangementAffiliationService;
+}
 
 }

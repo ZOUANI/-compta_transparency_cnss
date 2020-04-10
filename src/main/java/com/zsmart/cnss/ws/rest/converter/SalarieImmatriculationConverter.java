@@ -1,73 +1,72 @@
 package com.zsmart.cnss.ws.rest.converter;
-
+ 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.zsmart.cnss.service.util.*;
-import com.zsmart.cnss.bean.SalarieImmatriculation;
-import com.zsmart.cnss.ws.rest.vo.SalarieImmatriculationVo;
+import com.zsmart.cnss.bean.SalarieImmatriculation; 
+import com.zsmart.cnss.ws.rest.vo.SalarieImmatriculationVo; 
 
-@Component
-public class SalarieImmatriculationConverter extends AbstractConverter<SalarieImmatriculation, SalarieImmatriculationVo> {
+ @Component 
+public class SalarieImmatriculationConverter extends AbstractConverter<SalarieImmatriculation,SalarieImmatriculationVo>{ 
 
-    private boolean salarie;
+private boolean salarie; 
 
-    @Autowired
-    private SalarieConverter salarieConverter;
-    private boolean immatriculationDemande;
+ @Autowired
+ private SalarieConverter salarieConverter ; 
+private boolean immatriculationDemande; 
 
-    @Autowired
-    private ImmatriculationDemandeConverter immatriculationDemandeConverter;
+ @Autowired
+ private ImmatriculationDemandeConverter immatriculationDemandeConverter ; 
 
-    @Override
-    public SalarieImmatriculation toItem(SalarieImmatriculationVo vo) {
-        if (vo == null) {
-            return null;
-        } else {
-            SalarieImmatriculation item = new SalarieImmatriculation();
+ @Override 
+ public SalarieImmatriculation toItem(SalarieImmatriculationVo vo) {
+ if (vo == null) {
+    return null;
+      } else {
+SalarieImmatriculation item = new SalarieImmatriculation();
 
-            if (salarie && vo.getSalarieVo() != null) {
-                item.setSalarie(salarieConverter.toItem(vo.getSalarieVo()));
-            }
+ if(salarie&& vo.getSalarieVo() != null) {
+ item.setSalarie(salarieConverter.toItem(vo.getSalarieVo()));
+} 
+ 
+ if(immatriculationDemande&& vo.getImmatriculationDemandeVo() != null) {
+ item.setImmatriculationDemande(immatriculationDemandeConverter.toItem(vo.getImmatriculationDemandeVo()));
+} 
+ 
+ if (vo.getId() != null) {
+ item.setId(NumberUtil.toLong(vo.getId()));
+} 
 
-            if (immatriculationDemande && vo.getImmatriculationDemandeVo() != null) {
-                item.setImmatriculationDemande(immatriculationDemandeConverter.toItem(vo.getImmatriculationDemandeVo()));
-            }
+return item;
+ }
+ }
 
-            if (vo.getId() != null) {
-                item.setId(NumberUtil.toLong(vo.getId()));
-            }
+  @Override 
+ public SalarieImmatriculationVo toVo(SalarieImmatriculation item) {
+ if (item == null) {
+    return null;
+      } else {
+SalarieImmatriculationVo vo = new SalarieImmatriculationVo();
 
-            return item;
-        }
-    }
+ if(salarie&& item.getSalarie() != null) {
+ vo.setSalarieVo(salarieConverter.toVo(item.getSalarie()));
+} 
+ 
+ if(immatriculationDemande&& item.getImmatriculationDemande() != null) {
+ vo.setImmatriculationDemandeVo(immatriculationDemandeConverter.toVo(item.getImmatriculationDemande()));
+} 
+ 
+ if (item.getId() != null) {
+ vo.setId(NumberUtil.toString(item.getId()));
+} 
 
-    @Override
-    public SalarieImmatriculationVo toVo(SalarieImmatriculation item) {
-        if (item == null) {
-            return null;
-        } else {
-            SalarieImmatriculationVo vo = new SalarieImmatriculationVo();
+return vo;
+ }
+ }
+public void init() { 
 
-            if (salarie && item.getSalarie() != null) {
-                vo.setSalarieVo(salarieConverter.toVo(item.getSalarie()));
-            }
+salarie = true; 
 
-            if (immatriculationDemande && item.getImmatriculationDemande() != null) {
-                vo.setImmatriculationDemandeVo(immatriculationDemandeConverter.toVo(item.getImmatriculationDemande()));
-            }
-
-            if (item.getId() != null) {
-                vo.setId(NumberUtil.toString(item.getId()));
-            }
-
-            return vo;
-        }
-    }
-
-    public void init() {
-
-        salarie = true;
-
-        immatriculationDemande = true;
-    }
+immatriculationDemande = true; 
 }
+ } 

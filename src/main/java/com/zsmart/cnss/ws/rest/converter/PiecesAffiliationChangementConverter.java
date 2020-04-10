@@ -1,81 +1,80 @@
 package com.zsmart.cnss.ws.rest.converter;
-
+ 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.zsmart.cnss.service.util.*;
-import com.zsmart.cnss.bean.PiecesAffiliationChangement;
-import com.zsmart.cnss.ws.rest.vo.PiecesAffiliationChangementVo;
+import com.zsmart.cnss.bean.PiecesAffiliationChangement; 
+import com.zsmart.cnss.ws.rest.vo.PiecesAffiliationChangementVo; 
 
-@Component
-public class PiecesAffiliationChangementConverter extends AbstractConverter<PiecesAffiliationChangement, PiecesAffiliationChangementVo> {
+ @Component 
+public class PiecesAffiliationChangementConverter extends AbstractConverter<PiecesAffiliationChangement,PiecesAffiliationChangementVo>{ 
 
-    private boolean piecesObjetChangement;
+private boolean piecesObjetChangement; 
 
-    @Autowired
-    private PiecesObjetChangementConverter piecesObjetChangementConverter;
-    private boolean affiliationChangement;
+ @Autowired
+ private PiecesObjetChangementConverter piecesObjetChangementConverter ; 
+private boolean affiliationChangement; 
 
-    @Autowired
-    private AffiliationChangementConverter affiliationChangementConverter;
+ @Autowired
+ private AffiliationChangementConverter affiliationChangementConverter ; 
 
-    @Override
-    public PiecesAffiliationChangement toItem(PiecesAffiliationChangementVo vo) {
-        if (vo == null) {
-            return null;
-        } else {
-            PiecesAffiliationChangement item = new PiecesAffiliationChangement();
+ @Override 
+ public PiecesAffiliationChangement toItem(PiecesAffiliationChangementVo vo) {
+ if (vo == null) {
+    return null;
+      } else {
+PiecesAffiliationChangement item = new PiecesAffiliationChangement();
 
-            if (piecesObjetChangement && vo.getPiecesObjetChangementVo() != null) {
-                item.setPiecesObjetChangement(piecesObjetChangementConverter.toItem(vo.getPiecesObjetChangementVo()));
-            }
+ if(piecesObjetChangement&& vo.getPiecesObjetChangementVo() != null) {
+ item.setPiecesObjetChangement(piecesObjetChangementConverter.toItem(vo.getPiecesObjetChangementVo()));
+} 
+ 
+ if(affiliationChangement&& vo.getAffiliationChangementVo() != null) {
+ item.setAffiliationChangement(affiliationChangementConverter.toItem(vo.getAffiliationChangementVo()));
+} 
+ 
+ if (vo.getId() != null) {
+ item.setId(NumberUtil.toLong(vo.getId()));
+} 
 
-            if (affiliationChangement && vo.getAffiliationChangementVo() != null) {
-                item.setAffiliationChangement(affiliationChangementConverter.toItem(vo.getAffiliationChangementVo()));
-            }
+ if (vo.getNombreFourni() != null) {
+ item.setNombreFourni(NumberUtil.toInt(vo.getNombreFourni()));
+} 
 
-            if (vo.getId() != null) {
-                item.setId(NumberUtil.toLong(vo.getId()));
-            }
+return item;
+ }
+ }
 
-            if (vo.getNombreFourni() != null) {
-                item.setNombreFourni(NumberUtil.toInt(vo.getNombreFourni()));
-            }
+  @Override 
+ public PiecesAffiliationChangementVo toVo(PiecesAffiliationChangement item) {
+ if (item == null) {
+    return null;
+      } else {
+PiecesAffiliationChangementVo vo = new PiecesAffiliationChangementVo();
 
-            return item;
-        }
-    }
+ if(piecesObjetChangement&& item.getPiecesObjetChangement() != null) {
+ vo.setPiecesObjetChangementVo(piecesObjetChangementConverter.toVo(item.getPiecesObjetChangement()));
+} 
+ 
+ if(affiliationChangement&& item.getAffiliationChangement() != null) {
+ vo.setAffiliationChangementVo(affiliationChangementConverter.toVo(item.getAffiliationChangement()));
+} 
+ 
+ if (item.getId() != null) {
+ vo.setId(NumberUtil.toString(item.getId()));
+} 
 
-    @Override
-    public PiecesAffiliationChangementVo toVo(PiecesAffiliationChangement item) {
-        if (item == null) {
-            return null;
-        } else {
-            PiecesAffiliationChangementVo vo = new PiecesAffiliationChangementVo();
+ if (item.getNombreFourni() != null) {
+ vo.setNombreFourni(NumberUtil.toString(item.getNombreFourni()));
+} 
 
-            if (piecesObjetChangement && item.getPiecesObjetChangement() != null) {
-                vo.setPiecesObjetChangementVo(piecesObjetChangementConverter.toVo(item.getPiecesObjetChangement()));
-            }
+return vo;
+ }
+ }
+public void init() { 
 
-            if (affiliationChangement && item.getAffiliationChangement() != null) {
-                vo.setAffiliationChangementVo(affiliationChangementConverter.toVo(item.getAffiliationChangement()));
-            }
+piecesObjetChangement = true; 
 
-            if (item.getId() != null) {
-                vo.setId(NumberUtil.toString(item.getId()));
-            }
-
-            if (item.getNombreFourni() != null) {
-                vo.setNombreFourni(NumberUtil.toString(item.getNombreFourni()));
-            }
-
-            return vo;
-        }
-    }
-
-    public void init() {
-
-        piecesObjetChangement = true;
-
-        affiliationChangement = true;
-    }
+affiliationChangement = true; 
 }
+ } 

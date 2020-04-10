@@ -1,52 +1,52 @@
 package com.zsmart.cnss.ws.rest.converter;
-
+ 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.zsmart.cnss.service.util.*;
-import com.zsmart.cnss.bean.FormeJuridque;
-import com.zsmart.cnss.ws.rest.vo.FormeJuridqueVo;
+import com.zsmart.cnss.bean.FormeJuridque; 
+import com.zsmart.cnss.ws.rest.vo.FormeJuridqueVo; 
 
-@Component
-public class FormeJuridqueConverter extends AbstractConverter<FormeJuridque, FormeJuridqueVo> {
+ @Component 
+public class FormeJuridqueConverter extends AbstractConverter<FormeJuridque,FormeJuridqueVo>{ 
 
-    @Override
-    public FormeJuridque toItem(FormeJuridqueVo vo) {
-        if (vo == null) {
-            return null;
-        } else {
-            FormeJuridque item = new FormeJuridque();
 
-            if (StringUtil.isNotEmpty(vo.getLibelle())) {
-                item.setLibelle(vo.getLibelle());
-            }
+ @Override 
+ public FormeJuridque toItem(FormeJuridqueVo vo) {
+ if (vo == null) {
+    return null;
+      } else {
+FormeJuridque item = new FormeJuridque();
 
-            if (vo.getId() != null) {
-                item.setId(NumberUtil.toLong(vo.getId()));
-            }
+ if (StringUtil.isNotEmpty(vo.getLibelle())) {
+ item.setLibelle(vo.getLibelle());
+} 
 
-            return item;
-        }
-    }
+ if (vo.getId() != null) {
+ item.setId(NumberUtil.toLong(vo.getId()));
+} 
 
-    @Override
-    public FormeJuridqueVo toVo(FormeJuridque item) {
-        if (item == null) {
-            return null;
-        } else {
-            FormeJuridqueVo vo = new FormeJuridqueVo();
+return item;
+ }
+ }
 
-            if (StringUtil.isNotEmpty(item.getLibelle())) {
-                vo.setLibelle(item.getLibelle());
-            }
+  @Override 
+ public FormeJuridqueVo toVo(FormeJuridque item) {
+ if (item == null) {
+    return null;
+      } else {
+FormeJuridqueVo vo = new FormeJuridqueVo();
 
-            if (item.getId() != null) {
-                vo.setId(NumberUtil.toString(item.getId()));
-            }
+ if (StringUtil.isNotEmpty(item.getLibelle())) {
+ vo.setLibelle(item.getLibelle());
+} 
 
-            return vo;
-        }
-    }
+ if (item.getId() != null) {
+ vo.setId(NumberUtil.toString(item.getId()));
+} 
 
-    public void init() {
-    }
+return vo;
+ }
+ }
+public void init() { 
 }
+ } 

@@ -3,79 +3,85 @@ package com.zsmart.cnss.ws.rest.vo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AffiliationDemandeVo {
 
-    private String id;
-    private String reference;
-    private String dateDemandeAffiliation;
-    private String dateDemandeAffiliationMin;
-    private String dateDemandeAffiliationMax;
-    private AffilieVo affilieVo;
-    private List<LieuActiviteVo> lieuActivitesVo;
-    private List<SalarieAffiliationVo> salarieAffiliationsVo;
+public class AffiliationDemandeVo{
 
-    public String getId() {
-        return id;
-    }
+private String id ;
+private String reference ;
+private String dateDemandeAffiliation;
+private String dateDemandeAffiliationMin ;
+private String dateDemandeAffiliationMax ;
+private AffilieVo affilieVo ;
+private List<LieuActiviteVo>lieuActivitesVo;
+private List<SalarieAffiliationVo>salarieAffiliationsVo;
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
-    public String getReference() {
-        return reference;
-    }
 
-    public void setReference(String reference) {
-        this.reference = reference;
-    }
+public String  getId(){
+    return id;
+}
 
-    public String getDateDemandeAffiliation() {
-        return dateDemandeAffiliation;
-    }
+public void setId(String  id){
+     this.id = id;
+}
 
-    public void setDateDemandeAffiliation(String dateDemandeAffiliation) {
-        this.dateDemandeAffiliation = dateDemandeAffiliation;
-    }
+public String  getReference(){
+    return reference;
+}
 
-    public String getDateDemandeAffiliationMin() {
-        return dateDemandeAffiliationMin;
-    }
+public void setReference(String  reference){
+     this.reference = reference;
+}
 
-    public void setDateDemandeAffiliationMin(String dateDemandeAffiliationMin) {
-        this.dateDemandeAffiliationMin = dateDemandeAffiliationMin;
-    }
+public String  getDateDemandeAffiliation(){
+    return dateDemandeAffiliation;
+}
 
-    public String getDateDemandeAffiliationMax() {
-        return dateDemandeAffiliationMax;
-    }
+public void setDateDemandeAffiliation(String  dateDemandeAffiliation){
+     this.dateDemandeAffiliation = dateDemandeAffiliation;
+}
 
-    public void setDateDemandeAffiliationMax(String dateDemandeAffiliationMax) {
-        this.dateDemandeAffiliationMax = dateDemandeAffiliationMax;
-    }
+public String  getDateDemandeAffiliationMin(){
+    return dateDemandeAffiliationMin;
+}
 
-    public AffilieVo getAffilieVo() {
-        return affilieVo;
-    }
+public void setDateDemandeAffiliationMin(String  dateDemandeAffiliationMin){
+     this.dateDemandeAffiliationMin = dateDemandeAffiliationMin;
+}
 
-    public void setAffilieVo(AffilieVo affilieVo) {
-        this.affilieVo = affilieVo;
-    }
+public String  getDateDemandeAffiliationMax(){
+    return dateDemandeAffiliationMax;
+}
 
-    public List<LieuActiviteVo> getLieuActivitesVo() {
-        return lieuActivitesVo;
-    }
+public void setDateDemandeAffiliationMax(String  dateDemandeAffiliationMax){
+     this.dateDemandeAffiliationMax = dateDemandeAffiliationMax;
+}
 
-    public void setLieuActivitesVo(List<LieuActiviteVo> lieuActivitesVo) {
-        this.lieuActivitesVo = lieuActivitesVo;
-    }
+public AffilieVo  getAffilieVo (){
+    return affilieVo ;
+}
 
-    public List<SalarieAffiliationVo> getSalarieAffiliationsVo() {
-        return salarieAffiliationsVo;
-    }
+public void setAffilieVo (AffilieVo  affilieVo ){
+     this.affilieVo  = affilieVo ;
+}
 
-    public void setSalarieAffiliationsVo(List<SalarieAffiliationVo> salarieAffiliationsVo) {
-        this.salarieAffiliationsVo = salarieAffiliationsVo;
-    }
+public List<LieuActiviteVo> getLieuActivitesVo(){
+    return lieuActivitesVo;
+}
+
+public void setLieuActivitesVo(List<LieuActiviteVo> lieuActivitesVo){
+     this.lieuActivitesVo = lieuActivitesVo;
+}
+
+public List<SalarieAffiliationVo> getSalarieAffiliationsVo(){
+    return salarieAffiliationsVo;
+}
+
+public void setSalarieAffiliationsVo(List<SalarieAffiliationVo> salarieAffiliationsVo){
+     this.salarieAffiliationsVo = salarieAffiliationsVo;
+}
+
+
+
 
 }

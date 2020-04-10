@@ -3,34 +3,40 @@ package com.zsmart.cnss.ws.rest.vo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ObjetChangementAffiliationVo {
 
-    private String id;
-    private ObjetChangementVo objetChangementVo;
-    private AffiliationChangementVo affiliationChangementVo;
+public class ObjetChangementAffiliationVo{
 
-    public String getId() {
-        return id;
-    }
+private String id ;
+private ObjetChangementVo objetChangementVo ;
+private AffiliationChangementVo affiliationChangementVo ;
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
-    public ObjetChangementVo getObjetChangementVo() {
-        return objetChangementVo;
-    }
 
-    public void setObjetChangementVo(ObjetChangementVo objetChangementVo) {
-        this.objetChangementVo = objetChangementVo;
-    }
+public String  getId(){
+    return id;
+}
 
-    public AffiliationChangementVo getAffiliationChangementVo() {
-        return affiliationChangementVo;
-    }
+public void setId(String  id){
+     this.id = id;
+}
 
-    public void setAffiliationChangementVo(AffiliationChangementVo affiliationChangementVo) {
-        this.affiliationChangementVo = affiliationChangementVo;
-    }
+public ObjetChangementVo  getObjetChangementVo (){
+    return objetChangementVo ;
+}
+
+public void setObjetChangementVo (ObjetChangementVo  objetChangementVo ){
+     this.objetChangementVo  = objetChangementVo ;
+}
+
+public AffiliationChangementVo  getAffiliationChangementVo (){
+    return affiliationChangementVo ;
+}
+
+public void setAffiliationChangementVo (AffiliationChangementVo  affiliationChangementVo ){
+     this.affiliationChangementVo  = affiliationChangementVo ;
+}
+
+
+
 
 }

@@ -1,60 +1,60 @@
 package com.zsmart.cnss.ws.rest.converter;
-
+ 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.zsmart.cnss.service.util.*;
-import com.zsmart.cnss.bean.ImmatriculationChangementEtat;
-import com.zsmart.cnss.ws.rest.vo.ImmatriculationChangementEtatVo;
+import com.zsmart.cnss.bean.ImmatriculationChangementEtat; 
+import com.zsmart.cnss.ws.rest.vo.ImmatriculationChangementEtatVo; 
 
-@Component
-public class ImmatriculationChangementEtatConverter extends AbstractConverter<ImmatriculationChangementEtat, ImmatriculationChangementEtatVo> {
+ @Component 
+public class ImmatriculationChangementEtatConverter extends AbstractConverter<ImmatriculationChangementEtat,ImmatriculationChangementEtatVo>{ 
 
-    @Override
-    public ImmatriculationChangementEtat toItem(ImmatriculationChangementEtatVo vo) {
-        if (vo == null) {
-            return null;
-        } else {
-            ImmatriculationChangementEtat item = new ImmatriculationChangementEtat();
 
-            if (StringUtil.isNotEmpty(vo.getLibelle())) {
-                item.setLibelle(vo.getLibelle());
-            }
+ @Override 
+ public ImmatriculationChangementEtat toItem(ImmatriculationChangementEtatVo vo) {
+ if (vo == null) {
+    return null;
+      } else {
+ImmatriculationChangementEtat item = new ImmatriculationChangementEtat();
 
-            if (StringUtil.isNotEmpty(vo.getReference())) {
-                item.setReference(vo.getReference());
-            }
+ if (StringUtil.isNotEmpty(vo.getLibelle())) {
+ item.setLibelle(vo.getLibelle());
+} 
 
-            if (vo.getId() != null) {
-                item.setId(NumberUtil.toLong(vo.getId()));
-            }
+ if (StringUtil.isNotEmpty(vo.getReference())) {
+ item.setReference(vo.getReference());
+} 
 
-            return item;
-        }
-    }
+ if (vo.getId() != null) {
+ item.setId(NumberUtil.toLong(vo.getId()));
+} 
 
-    @Override
-    public ImmatriculationChangementEtatVo toVo(ImmatriculationChangementEtat item) {
-        if (item == null) {
-            return null;
-        } else {
-            ImmatriculationChangementEtatVo vo = new ImmatriculationChangementEtatVo();
+return item;
+ }
+ }
 
-            if (StringUtil.isNotEmpty(item.getLibelle())) {
-                vo.setLibelle(item.getLibelle());
-            }
+  @Override 
+ public ImmatriculationChangementEtatVo toVo(ImmatriculationChangementEtat item) {
+ if (item == null) {
+    return null;
+      } else {
+ImmatriculationChangementEtatVo vo = new ImmatriculationChangementEtatVo();
 
-            if (StringUtil.isNotEmpty(item.getReference())) {
-                vo.setReference(item.getReference());
-            }
+ if (StringUtil.isNotEmpty(item.getLibelle())) {
+ vo.setLibelle(item.getLibelle());
+} 
 
-            if (item.getId() != null) {
-                vo.setId(NumberUtil.toString(item.getId()));
-            }
+ if (StringUtil.isNotEmpty(item.getReference())) {
+ vo.setReference(item.getReference());
+} 
 
-            return vo;
-        }
-    }
+ if (item.getId() != null) {
+ vo.setId(NumberUtil.toString(item.getId()));
+} 
 
-    public void init() {
-    }
+return vo;
+ }
+ }
+public void init() { 
 }
+ } 

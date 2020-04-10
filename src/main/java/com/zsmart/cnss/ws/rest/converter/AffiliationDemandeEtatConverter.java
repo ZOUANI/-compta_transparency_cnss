@@ -1,60 +1,60 @@
 package com.zsmart.cnss.ws.rest.converter;
-
+ 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.zsmart.cnss.service.util.*;
-import com.zsmart.cnss.bean.AffiliationDemandeEtat;
-import com.zsmart.cnss.ws.rest.vo.AffiliationDemandeEtatVo;
+import com.zsmart.cnss.bean.AffiliationDemandeEtat; 
+import com.zsmart.cnss.ws.rest.vo.AffiliationDemandeEtatVo; 
 
-@Component
-public class AffiliationDemandeEtatConverter extends AbstractConverter<AffiliationDemandeEtat, AffiliationDemandeEtatVo> {
+ @Component 
+public class AffiliationDemandeEtatConverter extends AbstractConverter<AffiliationDemandeEtat,AffiliationDemandeEtatVo>{ 
 
-    @Override
-    public AffiliationDemandeEtat toItem(AffiliationDemandeEtatVo vo) {
-        if (vo == null) {
-            return null;
-        } else {
-            AffiliationDemandeEtat item = new AffiliationDemandeEtat();
 
-            if (StringUtil.isNotEmpty(vo.getLibelle())) {
-                item.setLibelle(vo.getLibelle());
-            }
+ @Override 
+ public AffiliationDemandeEtat toItem(AffiliationDemandeEtatVo vo) {
+ if (vo == null) {
+    return null;
+      } else {
+AffiliationDemandeEtat item = new AffiliationDemandeEtat();
 
-            if (StringUtil.isNotEmpty(vo.getReference())) {
-                item.setReference(vo.getReference());
-            }
+ if (StringUtil.isNotEmpty(vo.getLibelle())) {
+ item.setLibelle(vo.getLibelle());
+} 
 
-            if (vo.getId() != null) {
-                item.setId(NumberUtil.toLong(vo.getId()));
-            }
+ if (StringUtil.isNotEmpty(vo.getReference())) {
+ item.setReference(vo.getReference());
+} 
 
-            return item;
-        }
-    }
+ if (vo.getId() != null) {
+ item.setId(NumberUtil.toLong(vo.getId()));
+} 
 
-    @Override
-    public AffiliationDemandeEtatVo toVo(AffiliationDemandeEtat item) {
-        if (item == null) {
-            return null;
-        } else {
-            AffiliationDemandeEtatVo vo = new AffiliationDemandeEtatVo();
+return item;
+ }
+ }
 
-            if (StringUtil.isNotEmpty(item.getLibelle())) {
-                vo.setLibelle(item.getLibelle());
-            }
+  @Override 
+ public AffiliationDemandeEtatVo toVo(AffiliationDemandeEtat item) {
+ if (item == null) {
+    return null;
+      } else {
+AffiliationDemandeEtatVo vo = new AffiliationDemandeEtatVo();
 
-            if (StringUtil.isNotEmpty(item.getReference())) {
-                vo.setReference(item.getReference());
-            }
+ if (StringUtil.isNotEmpty(item.getLibelle())) {
+ vo.setLibelle(item.getLibelle());
+} 
 
-            if (item.getId() != null) {
-                vo.setId(NumberUtil.toString(item.getId()));
-            }
+ if (StringUtil.isNotEmpty(item.getReference())) {
+ vo.setReference(item.getReference());
+} 
 
-            return vo;
-        }
-    }
+ if (item.getId() != null) {
+ vo.setId(NumberUtil.toString(item.getId()));
+} 
 
-    public void init() {
-    }
+return vo;
+ }
+ }
+public void init() { 
 }
+ } 

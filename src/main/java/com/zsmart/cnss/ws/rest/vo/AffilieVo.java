@@ -3,169 +3,211 @@ package com.zsmart.cnss.ws.rest.vo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AffilieVo {
 
-    private String id;
-    private String raisonSocial;
-    private String numTaxePro;
-    private String numRegistreComerciale;
-    private String idFiscal;
-    private String iceSociete;
-    private String numAffiliationSocieteMere;
-    private String numSalariesEmployes;
-    private String datePremierSalarie;
-    private String adresseSiegeSocial;
-    private String typeSiegeSocial;
-    private String commune;
-    private String quartie;
-    private String codePostal;
-    private String numTel;
-    private String email;
-    private FormeJuridqueVo formeJuridiqueVo;
-    private VilleVo villeVo;
+public class AffilieVo{
 
-    public String getId() {
-        return id;
-    }
+private String id ;
+private String raisonSocial ;
+private String numTaxePro ;
+private String numRegistreComerciale ;
+private String idFiscal ;
+private String iceSociete ;
+private String numAffiliationSocieteMere ;
+private String numSalariesEmployes ;
+private String datePremierSalarie ;
+private String adresseSiegeSocial ;
+private String typeSiegeSocial ;
+private String commune ;
+private String quartie ;
+private String codePostal ;
+private String numTel ;
+private String email ;
+private String totalSalaire;
+private String totalSalaireMin ;
+private String totalSalaireMax ;
+private FormeJuridqueVo formeJuridiqueVo ;
+private VilleVo villeVo ;
+private List<DeclarationSalarieVo>declarationSalariesVo;
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
-    public String getRaisonSocial() {
-        return raisonSocial;
-    }
 
-    public void setRaisonSocial(String raisonSocial) {
-        this.raisonSocial = raisonSocial;
-    }
+public String  getId(){
+    return id;
+}
 
-    public String getNumTaxePro() {
-        return numTaxePro;
-    }
+public void setId(String  id){
+     this.id = id;
+}
 
-    public void setNumTaxePro(String numTaxePro) {
-        this.numTaxePro = numTaxePro;
-    }
+public String  getRaisonSocial(){
+    return raisonSocial;
+}
 
-    public String getNumRegistreComerciale() {
-        return numRegistreComerciale;
-    }
+public void setRaisonSocial(String  raisonSocial){
+     this.raisonSocial = raisonSocial;
+}
 
-    public void setNumRegistreComerciale(String numRegistreComerciale) {
-        this.numRegistreComerciale = numRegistreComerciale;
-    }
+public String  getNumTaxePro(){
+    return numTaxePro;
+}
 
-    public String getIdFiscal() {
-        return idFiscal;
-    }
+public void setNumTaxePro(String  numTaxePro){
+     this.numTaxePro = numTaxePro;
+}
 
-    public void setIdFiscal(String idFiscal) {
-        this.idFiscal = idFiscal;
-    }
+public String  getNumRegistreComerciale(){
+    return numRegistreComerciale;
+}
 
-    public String getIceSociete() {
-        return iceSociete;
-    }
+public void setNumRegistreComerciale(String  numRegistreComerciale){
+     this.numRegistreComerciale = numRegistreComerciale;
+}
 
-    public void setIceSociete(String iceSociete) {
-        this.iceSociete = iceSociete;
-    }
+public String  getIdFiscal(){
+    return idFiscal;
+}
 
-    public String getNumAffiliationSocieteMere() {
-        return numAffiliationSocieteMere;
-    }
+public void setIdFiscal(String  idFiscal){
+     this.idFiscal = idFiscal;
+}
 
-    public void setNumAffiliationSocieteMere(String numAffiliationSocieteMere) {
-        this.numAffiliationSocieteMere = numAffiliationSocieteMere;
-    }
+public String  getIceSociete(){
+    return iceSociete;
+}
 
-    public String getNumSalariesEmployes() {
-        return numSalariesEmployes;
-    }
+public void setIceSociete(String  iceSociete){
+     this.iceSociete = iceSociete;
+}
 
-    public void setNumSalariesEmployes(String numSalariesEmployes) {
-        this.numSalariesEmployes = numSalariesEmployes;
-    }
+public String  getNumAffiliationSocieteMere(){
+    return numAffiliationSocieteMere;
+}
 
-    public String getDatePremierSalarie() {
-        return datePremierSalarie;
-    }
+public void setNumAffiliationSocieteMere(String  numAffiliationSocieteMere){
+     this.numAffiliationSocieteMere = numAffiliationSocieteMere;
+}
 
-    public void setDatePremierSalarie(String datePremierSalarie) {
-        this.datePremierSalarie = datePremierSalarie;
-    }
+public String  getNumSalariesEmployes(){
+    return numSalariesEmployes;
+}
 
-    public String getAdresseSiegeSocial() {
-        return adresseSiegeSocial;
-    }
+public void setNumSalariesEmployes(String  numSalariesEmployes){
+     this.numSalariesEmployes = numSalariesEmployes;
+}
 
-    public void setAdresseSiegeSocial(String adresseSiegeSocial) {
-        this.adresseSiegeSocial = adresseSiegeSocial;
-    }
+public String  getDatePremierSalarie(){
+    return datePremierSalarie;
+}
 
-    public String getTypeSiegeSocial() {
-        return typeSiegeSocial;
-    }
+public void setDatePremierSalarie(String  datePremierSalarie){
+     this.datePremierSalarie = datePremierSalarie;
+}
 
-    public void setTypeSiegeSocial(String typeSiegeSocial) {
-        this.typeSiegeSocial = typeSiegeSocial;
-    }
+public String  getAdresseSiegeSocial(){
+    return adresseSiegeSocial;
+}
 
-    public String getCommune() {
-        return commune;
-    }
+public void setAdresseSiegeSocial(String  adresseSiegeSocial){
+     this.adresseSiegeSocial = adresseSiegeSocial;
+}
 
-    public void setCommune(String commune) {
-        this.commune = commune;
-    }
+public String  getTypeSiegeSocial(){
+    return typeSiegeSocial;
+}
 
-    public String getQuartie() {
-        return quartie;
-    }
+public void setTypeSiegeSocial(String  typeSiegeSocial){
+     this.typeSiegeSocial = typeSiegeSocial;
+}
 
-    public void setQuartie(String quartie) {
-        this.quartie = quartie;
-    }
+public String  getCommune(){
+    return commune;
+}
 
-    public String getCodePostal() {
-        return codePostal;
-    }
+public void setCommune(String  commune){
+     this.commune = commune;
+}
 
-    public void setCodePostal(String codePostal) {
-        this.codePostal = codePostal;
-    }
+public String  getQuartie(){
+    return quartie;
+}
 
-    public String getNumTel() {
-        return numTel;
-    }
+public void setQuartie(String  quartie){
+     this.quartie = quartie;
+}
 
-    public void setNumTel(String numTel) {
-        this.numTel = numTel;
-    }
+public String  getCodePostal(){
+    return codePostal;
+}
 
-    public String getEmail() {
-        return email;
-    }
+public void setCodePostal(String  codePostal){
+     this.codePostal = codePostal;
+}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+public String  getNumTel(){
+    return numTel;
+}
 
-    public FormeJuridqueVo getFormeJuridiqueVo() {
-        return formeJuridiqueVo;
-    }
+public void setNumTel(String  numTel){
+     this.numTel = numTel;
+}
 
-    public void setFormeJuridiqueVo(FormeJuridqueVo formeJuridiqueVo) {
-        this.formeJuridiqueVo = formeJuridiqueVo;
-    }
+public String  getEmail(){
+    return email;
+}
 
-    public VilleVo getVilleVo() {
-        return villeVo;
-    }
+public void setEmail(String  email){
+     this.email = email;
+}
 
-    public void setVilleVo(VilleVo villeVo) {
-        this.villeVo = villeVo;
-    }
+public String  getTotalSalaire(){
+    return totalSalaire;
+}
+
+public void setTotalSalaire(String  totalSalaire){
+     this.totalSalaire = totalSalaire;
+}
+
+public String  getTotalSalaireMin(){
+    return totalSalaireMin;
+}
+
+public void setTotalSalaireMin(String  totalSalaireMin){
+     this.totalSalaireMin = totalSalaireMin;
+}
+
+public String  getTotalSalaireMax(){
+    return totalSalaireMax;
+}
+
+public void setTotalSalaireMax(String  totalSalaireMax){
+     this.totalSalaireMax = totalSalaireMax;
+}
+
+public FormeJuridqueVo  getFormeJuridiqueVo (){
+    return formeJuridiqueVo ;
+}
+
+public void setFormeJuridiqueVo (FormeJuridqueVo  formeJuridiqueVo ){
+     this.formeJuridiqueVo  = formeJuridiqueVo ;
+}
+
+public VilleVo  getVilleVo (){
+    return villeVo ;
+}
+
+public void setVilleVo (VilleVo  villeVo ){
+     this.villeVo  = villeVo ;
+}
+
+public List<DeclarationSalarieVo> getDeclarationSalariesVo(){
+    return declarationSalariesVo;
+}
+
+public void setDeclarationSalariesVo(List<DeclarationSalarieVo> declarationSalariesVo){
+     this.declarationSalariesVo = declarationSalariesVo;
+}
+
+
+
 
 }

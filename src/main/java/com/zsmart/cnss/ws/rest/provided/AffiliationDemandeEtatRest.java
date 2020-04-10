@@ -1,4 +1,5 @@
-package com.zsmart.cnss.ws.rest.provided;
+package com.zsmart.cnss.ws.rest.provided ;
+
 
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,54 +16,50 @@ import com.zsmart.cnss.service.facade.AffiliationDemandeEtatService;
 import com.zsmart.cnss.bean.AffiliationDemandeEtat;
 import com.zsmart.cnss.ws.rest.vo.AffiliationDemandeEtatVo;
 import com.zsmart.cnss.ws.rest.converter.AffiliationDemandeEtatConverter;
-import com.zsmart.cnss.service.util.*;
-
+import com.zsmart.cnss.service.util.* ;
 @RestController
 @RequestMapping("/cnss/AffiliationDemandeEtat")
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class AffiliationDemandeEtatRest {
 
-    @Autowired
-    private AffiliationDemandeEtatService affiliationDemandeEtatService;
+ @Autowired 
+ private AffiliationDemandeEtatService affiliationDemandeEtatService;
 
-    @Autowired
-    private AffiliationDemandeEtatConverter affiliationDemandeEtatConverter;
+ @Autowired 
+private AffiliationDemandeEtatConverter affiliationDemandeEtatConverter ;
 
-    @PostMapping("/")
-    public AffiliationDemandeEtatVo save(@RequestBody AffiliationDemandeEtatVo affiliationDemandeEtatVo) {
-        AffiliationDemandeEtat affiliationDemandeEtat = affiliationDemandeEtatConverter.toItem(affiliationDemandeEtatVo);
-        return affiliationDemandeEtatConverter.toVo(affiliationDemandeEtatService.save(affiliationDemandeEtat));
-    }
+@PostMapping("/")
+public AffiliationDemandeEtatVo save(@RequestBody AffiliationDemandeEtatVo affiliationDemandeEtatVo){
+AffiliationDemandeEtat affiliationDemandeEtat= affiliationDemandeEtatConverter.toItem(affiliationDemandeEtatVo);
+return affiliationDemandeEtatConverter.toVo(affiliationDemandeEtatService.save(affiliationDemandeEtat));
+}
+@DeleteMapping("/{id}")
+public void deleteById(@PathVariable Long id){
+affiliationDemandeEtatService.deleteById(id);
+}
+@DeleteMapping("/{reference}")
+public void  deleteByReference(@PathVariable String  reference){
+affiliationDemandeEtatService.deleteByReference(reference);
+}
+@GetMapping("/")
+public List<AffiliationDemandeEtatVo> findAll(){
+return affiliationDemandeEtatConverter.toVo(affiliationDemandeEtatService.findAll());
+}
 
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id) {
-        affiliationDemandeEtatService.deleteById(id);
-    }
+ public AffiliationDemandeEtatConverter getAffiliationDemandeEtatConverter(){
+return affiliationDemandeEtatConverter;
+}
+ 
+ public void setAffiliationDemandeEtatConverter(AffiliationDemandeEtatConverter affiliationDemandeEtatConverter){
+this.affiliationDemandeEtatConverter=affiliationDemandeEtatConverter;
+}
 
-    @DeleteMapping("/{reference}")
-    public void deleteByReference(@PathVariable String reference) {
-        affiliationDemandeEtatService.deleteByReference(reference);
-    }
-
-    @GetMapping("/")
-    public List<AffiliationDemandeEtatVo> findAll() {
-        return affiliationDemandeEtatConverter.toVo(affiliationDemandeEtatService.findAll());
-    }
-
-    public AffiliationDemandeEtatConverter getAffiliationDemandeEtatConverter() {
-        return affiliationDemandeEtatConverter;
-    }
-
-    public void setAffiliationDemandeEtatConverter(AffiliationDemandeEtatConverter affiliationDemandeEtatConverter) {
-        this.affiliationDemandeEtatConverter = affiliationDemandeEtatConverter;
-    }
-
-    public AffiliationDemandeEtatService getAffiliationDemandeEtatService() {
-        return affiliationDemandeEtatService;
-    }
-
-    public void setAffiliationDemandeEtatService(AffiliationDemandeEtatService affiliationDemandeEtatService) {
-        this.affiliationDemandeEtatService = affiliationDemandeEtatService;
-    }
+ public AffiliationDemandeEtatService getAffiliationDemandeEtatService(){
+return affiliationDemandeEtatService;
+}
+ 
+ public void setAffiliationDemandeEtatService(AffiliationDemandeEtatService affiliationDemandeEtatService){
+this.affiliationDemandeEtatService=affiliationDemandeEtatService;
+}
 
 }

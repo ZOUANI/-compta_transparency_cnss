@@ -3,106 +3,112 @@ package com.zsmart.cnss.ws.rest.vo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImmatriculationChangementVo {
 
-    private String id;
-    private String numAffiliation;
-    private String description;
-    private String dateChangementImmatriculation;
-    private String dateChangementImmatriculationMin;
-    private String dateChangementImmatriculationMax;
-    private TypeChangementVo typeChangementVo;
-    private SalarieVo salarieVo;
-    private ImmatriculationChangementEtatVo immatriculationChangementEtatVo;
-    private List<ObjetChangementImmatriculationVo> objetChangementImmatriculationsVo;
-    private List<PiecesImmatriculationChangementVo> piecesImmatriculationChangementsVo;
+public class ImmatriculationChangementVo{
 
-    public String getId() {
-        return id;
-    }
+private String id ;
+private String numAffiliation ;
+private String description ;
+private String dateChangementImmatriculation;
+private String dateChangementImmatriculationMin ;
+private String dateChangementImmatriculationMax ;
+private TypeChangementVo typeChangementVo ;
+private SalarieVo salarieVo ;
+private ImmatriculationChangementEtatVo immatriculationChangementEtatVo ;
+private List<ObjetChangementImmatriculationVo>objetChangementImmatriculationsVo;
+private List<PiecesImmatriculationChangementVo>piecesImmatriculationChangementsVo;
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
-    public String getNumAffiliation() {
-        return numAffiliation;
-    }
 
-    public void setNumAffiliation(String numAffiliation) {
-        this.numAffiliation = numAffiliation;
-    }
+public String  getId(){
+    return id;
+}
 
-    public String getDescription() {
-        return description;
-    }
+public void setId(String  id){
+     this.id = id;
+}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+public String  getNumAffiliation(){
+    return numAffiliation;
+}
 
-    public String getDateChangementImmatriculation() {
-        return dateChangementImmatriculation;
-    }
+public void setNumAffiliation(String  numAffiliation){
+     this.numAffiliation = numAffiliation;
+}
 
-    public void setDateChangementImmatriculation(String dateChangementImmatriculation) {
-        this.dateChangementImmatriculation = dateChangementImmatriculation;
-    }
+public String  getDescription(){
+    return description;
+}
 
-    public String getDateChangementImmatriculationMin() {
-        return dateChangementImmatriculationMin;
-    }
+public void setDescription(String  description){
+     this.description = description;
+}
 
-    public void setDateChangementImmatriculationMin(String dateChangementImmatriculationMin) {
-        this.dateChangementImmatriculationMin = dateChangementImmatriculationMin;
-    }
+public String  getDateChangementImmatriculation(){
+    return dateChangementImmatriculation;
+}
 
-    public String getDateChangementImmatriculationMax() {
-        return dateChangementImmatriculationMax;
-    }
+public void setDateChangementImmatriculation(String  dateChangementImmatriculation){
+     this.dateChangementImmatriculation = dateChangementImmatriculation;
+}
 
-    public void setDateChangementImmatriculationMax(String dateChangementImmatriculationMax) {
-        this.dateChangementImmatriculationMax = dateChangementImmatriculationMax;
-    }
+public String  getDateChangementImmatriculationMin(){
+    return dateChangementImmatriculationMin;
+}
 
-    public TypeChangementVo getTypeChangementVo() {
-        return typeChangementVo;
-    }
+public void setDateChangementImmatriculationMin(String  dateChangementImmatriculationMin){
+     this.dateChangementImmatriculationMin = dateChangementImmatriculationMin;
+}
 
-    public void setTypeChangementVo(TypeChangementVo typeChangementVo) {
-        this.typeChangementVo = typeChangementVo;
-    }
+public String  getDateChangementImmatriculationMax(){
+    return dateChangementImmatriculationMax;
+}
 
-    public SalarieVo getSalarieVo() {
-        return salarieVo;
-    }
+public void setDateChangementImmatriculationMax(String  dateChangementImmatriculationMax){
+     this.dateChangementImmatriculationMax = dateChangementImmatriculationMax;
+}
 
-    public void setSalarieVo(SalarieVo salarieVo) {
-        this.salarieVo = salarieVo;
-    }
+public TypeChangementVo  getTypeChangementVo (){
+    return typeChangementVo ;
+}
 
-    public ImmatriculationChangementEtatVo getImmatriculationChangementEtatVo() {
-        return immatriculationChangementEtatVo;
-    }
+public void setTypeChangementVo (TypeChangementVo  typeChangementVo ){
+     this.typeChangementVo  = typeChangementVo ;
+}
 
-    public void setImmatriculationChangementEtatVo(ImmatriculationChangementEtatVo immatriculationChangementEtatVo) {
-        this.immatriculationChangementEtatVo = immatriculationChangementEtatVo;
-    }
+public SalarieVo  getSalarieVo (){
+    return salarieVo ;
+}
 
-    public List<ObjetChangementImmatriculationVo> getObjetChangementImmatriculationsVo() {
-        return objetChangementImmatriculationsVo;
-    }
+public void setSalarieVo (SalarieVo  salarieVo ){
+     this.salarieVo  = salarieVo ;
+}
 
-    public void setObjetChangementImmatriculationsVo(List<ObjetChangementImmatriculationVo> objetChangementImmatriculationsVo) {
-        this.objetChangementImmatriculationsVo = objetChangementImmatriculationsVo;
-    }
+public ImmatriculationChangementEtatVo  getImmatriculationChangementEtatVo (){
+    return immatriculationChangementEtatVo ;
+}
 
-    public List<PiecesImmatriculationChangementVo> getPiecesImmatriculationChangementsVo() {
-        return piecesImmatriculationChangementsVo;
-    }
+public void setImmatriculationChangementEtatVo (ImmatriculationChangementEtatVo  immatriculationChangementEtatVo ){
+     this.immatriculationChangementEtatVo  = immatriculationChangementEtatVo ;
+}
 
-    public void setPiecesImmatriculationChangementsVo(List<PiecesImmatriculationChangementVo> piecesImmatriculationChangementsVo) {
-        this.piecesImmatriculationChangementsVo = piecesImmatriculationChangementsVo;
-    }
+public List<ObjetChangementImmatriculationVo> getObjetChangementImmatriculationsVo(){
+    return objetChangementImmatriculationsVo;
+}
+
+public void setObjetChangementImmatriculationsVo(List<ObjetChangementImmatriculationVo> objetChangementImmatriculationsVo){
+     this.objetChangementImmatriculationsVo = objetChangementImmatriculationsVo;
+}
+
+public List<PiecesImmatriculationChangementVo> getPiecesImmatriculationChangementsVo(){
+    return piecesImmatriculationChangementsVo;
+}
+
+public void setPiecesImmatriculationChangementsVo(List<PiecesImmatriculationChangementVo> piecesImmatriculationChangementsVo){
+     this.piecesImmatriculationChangementsVo = piecesImmatriculationChangementsVo;
+}
+
+
+
 
 }

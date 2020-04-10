@@ -1,4 +1,5 @@
-package com.zsmart.cnss.ws.rest.provided;
+package com.zsmart.cnss.ws.rest.provided ;
+
 
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,49 +16,46 @@ import com.zsmart.cnss.service.facade.ImmatriculationDemandeService;
 import com.zsmart.cnss.bean.ImmatriculationDemande;
 import com.zsmart.cnss.ws.rest.vo.ImmatriculationDemandeVo;
 import com.zsmart.cnss.ws.rest.converter.ImmatriculationDemandeConverter;
-import com.zsmart.cnss.service.util.*;
-
+import com.zsmart.cnss.service.util.* ;
 @RestController
 @RequestMapping("/cnss/ImmatriculationDemande")
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class ImmatriculationDemandeRest {
 
-    @Autowired
-    private ImmatriculationDemandeService immatriculationDemandeService;
+ @Autowired 
+ private ImmatriculationDemandeService immatriculationDemandeService;
 
-    @Autowired
-    private ImmatriculationDemandeConverter immatriculationDemandeConverter;
+ @Autowired 
+private ImmatriculationDemandeConverter immatriculationDemandeConverter ;
 
-    @PostMapping("/")
-    public ImmatriculationDemandeVo save(@RequestBody ImmatriculationDemandeVo immatriculationDemandeVo) {
-        ImmatriculationDemande immatriculationDemande = immatriculationDemandeConverter.toItem(immatriculationDemandeVo);
-        return immatriculationDemandeConverter.toVo(immatriculationDemandeService.save(immatriculationDemande));
-    }
+@PostMapping("/")
+public ImmatriculationDemandeVo save(@RequestBody ImmatriculationDemandeVo immatriculationDemandeVo){
+ImmatriculationDemande immatriculationDemande= immatriculationDemandeConverter.toItem(immatriculationDemandeVo);
+return immatriculationDemandeConverter.toVo(immatriculationDemandeService.save(immatriculationDemande));
+}
+@DeleteMapping("/{id}")
+public void deleteById(@PathVariable Long id){
+immatriculationDemandeService.deleteById(id);
+}
+@GetMapping("/")
+public List<ImmatriculationDemandeVo> findAll(){
+return immatriculationDemandeConverter.toVo(immatriculationDemandeService.findAll());
+}
 
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id) {
-        immatriculationDemandeService.deleteById(id);
-    }
+ public ImmatriculationDemandeConverter getImmatriculationDemandeConverter(){
+return immatriculationDemandeConverter;
+}
+ 
+ public void setImmatriculationDemandeConverter(ImmatriculationDemandeConverter immatriculationDemandeConverter){
+this.immatriculationDemandeConverter=immatriculationDemandeConverter;
+}
 
-    @GetMapping("/")
-    public List<ImmatriculationDemandeVo> findAll() {
-        return immatriculationDemandeConverter.toVo(immatriculationDemandeService.findAll());
-    }
-
-    public ImmatriculationDemandeConverter getImmatriculationDemandeConverter() {
-        return immatriculationDemandeConverter;
-    }
-
-    public void setImmatriculationDemandeConverter(ImmatriculationDemandeConverter immatriculationDemandeConverter) {
-        this.immatriculationDemandeConverter = immatriculationDemandeConverter;
-    }
-
-    public ImmatriculationDemandeService getImmatriculationDemandeService() {
-        return immatriculationDemandeService;
-    }
-
-    public void setImmatriculationDemandeService(ImmatriculationDemandeService immatriculationDemandeService) {
-        this.immatriculationDemandeService = immatriculationDemandeService;
-    }
+ public ImmatriculationDemandeService getImmatriculationDemandeService(){
+return immatriculationDemandeService;
+}
+ 
+ public void setImmatriculationDemandeService(ImmatriculationDemandeService immatriculationDemandeService){
+this.immatriculationDemandeService=immatriculationDemandeService;
+}
 
 }

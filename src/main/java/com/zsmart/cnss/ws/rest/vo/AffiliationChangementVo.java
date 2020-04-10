@@ -3,88 +3,94 @@ package com.zsmart.cnss.ws.rest.vo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AffiliationChangementVo {
 
-    private String id;
-    private String numAffiliation;
-    private String description;
-    private String dateChangementAffiliation;
-    private String dateChangementAffiliationMin;
-    private String dateChangementAffiliationMax;
-    private TypeDemandeVo typeDemandeVo;
-    private List<ObjetChangementAffiliationVo> objetChangementAffiliationsVo;
-    private List<PiecesAffiliationChangementVo> piecesAffiliationChangementsVo;
+public class AffiliationChangementVo{
 
-    public String getId() {
-        return id;
-    }
+private String id ;
+private String numAffiliation ;
+private String description ;
+private String dateChangementAffiliation;
+private String dateChangementAffiliationMin ;
+private String dateChangementAffiliationMax ;
+private TypeDemandeVo typeDemandeVo ;
+private List<ObjetChangementAffiliationVo>objetChangementAffiliationsVo;
+private List<PiecesAffiliationChangementVo>piecesAffiliationChangementsVo;
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
-    public String getNumAffiliation() {
-        return numAffiliation;
-    }
 
-    public void setNumAffiliation(String numAffiliation) {
-        this.numAffiliation = numAffiliation;
-    }
+public String  getId(){
+    return id;
+}
 
-    public String getDescription() {
-        return description;
-    }
+public void setId(String  id){
+     this.id = id;
+}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+public String  getNumAffiliation(){
+    return numAffiliation;
+}
 
-    public String getDateChangementAffiliation() {
-        return dateChangementAffiliation;
-    }
+public void setNumAffiliation(String  numAffiliation){
+     this.numAffiliation = numAffiliation;
+}
 
-    public void setDateChangementAffiliation(String dateChangementAffiliation) {
-        this.dateChangementAffiliation = dateChangementAffiliation;
-    }
+public String  getDescription(){
+    return description;
+}
 
-    public String getDateChangementAffiliationMin() {
-        return dateChangementAffiliationMin;
-    }
+public void setDescription(String  description){
+     this.description = description;
+}
 
-    public void setDateChangementAffiliationMin(String dateChangementAffiliationMin) {
-        this.dateChangementAffiliationMin = dateChangementAffiliationMin;
-    }
+public String  getDateChangementAffiliation(){
+    return dateChangementAffiliation;
+}
 
-    public String getDateChangementAffiliationMax() {
-        return dateChangementAffiliationMax;
-    }
+public void setDateChangementAffiliation(String  dateChangementAffiliation){
+     this.dateChangementAffiliation = dateChangementAffiliation;
+}
 
-    public void setDateChangementAffiliationMax(String dateChangementAffiliationMax) {
-        this.dateChangementAffiliationMax = dateChangementAffiliationMax;
-    }
+public String  getDateChangementAffiliationMin(){
+    return dateChangementAffiliationMin;
+}
 
-    public TypeDemandeVo getTypeDemandeVo() {
-        return typeDemandeVo;
-    }
+public void setDateChangementAffiliationMin(String  dateChangementAffiliationMin){
+     this.dateChangementAffiliationMin = dateChangementAffiliationMin;
+}
 
-    public void setTypeDemandeVo(TypeDemandeVo typeDemandeVo) {
-        this.typeDemandeVo = typeDemandeVo;
-    }
+public String  getDateChangementAffiliationMax(){
+    return dateChangementAffiliationMax;
+}
 
-    public List<ObjetChangementAffiliationVo> getObjetChangementAffiliationsVo() {
-        return objetChangementAffiliationsVo;
-    }
+public void setDateChangementAffiliationMax(String  dateChangementAffiliationMax){
+     this.dateChangementAffiliationMax = dateChangementAffiliationMax;
+}
 
-    public void setObjetChangementAffiliationsVo(List<ObjetChangementAffiliationVo> objetChangementAffiliationsVo) {
-        this.objetChangementAffiliationsVo = objetChangementAffiliationsVo;
-    }
+public TypeDemandeVo  getTypeDemandeVo (){
+    return typeDemandeVo ;
+}
 
-    public List<PiecesAffiliationChangementVo> getPiecesAffiliationChangementsVo() {
-        return piecesAffiliationChangementsVo;
-    }
+public void setTypeDemandeVo (TypeDemandeVo  typeDemandeVo ){
+     this.typeDemandeVo  = typeDemandeVo ;
+}
 
-    public void setPiecesAffiliationChangementsVo(List<PiecesAffiliationChangementVo> piecesAffiliationChangementsVo) {
-        this.piecesAffiliationChangementsVo = piecesAffiliationChangementsVo;
-    }
+public List<ObjetChangementAffiliationVo> getObjetChangementAffiliationsVo(){
+    return objetChangementAffiliationsVo;
+}
+
+public void setObjetChangementAffiliationsVo(List<ObjetChangementAffiliationVo> objetChangementAffiliationsVo){
+     this.objetChangementAffiliationsVo = objetChangementAffiliationsVo;
+}
+
+public List<PiecesAffiliationChangementVo> getPiecesAffiliationChangementsVo(){
+    return piecesAffiliationChangementsVo;
+}
+
+public void setPiecesAffiliationChangementsVo(List<PiecesAffiliationChangementVo> piecesAffiliationChangementsVo){
+     this.piecesAffiliationChangementsVo = piecesAffiliationChangementsVo;
+}
+
+
+
 
 }

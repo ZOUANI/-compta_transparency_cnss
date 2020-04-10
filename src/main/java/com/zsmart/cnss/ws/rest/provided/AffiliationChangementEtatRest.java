@@ -1,4 +1,5 @@
-package com.zsmart.cnss.ws.rest.provided;
+package com.zsmart.cnss.ws.rest.provided ;
+
 
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,54 +16,50 @@ import com.zsmart.cnss.service.facade.AffiliationChangementEtatService;
 import com.zsmart.cnss.bean.AffiliationChangementEtat;
 import com.zsmart.cnss.ws.rest.vo.AffiliationChangementEtatVo;
 import com.zsmart.cnss.ws.rest.converter.AffiliationChangementEtatConverter;
-import com.zsmart.cnss.service.util.*;
-
+import com.zsmart.cnss.service.util.* ;
 @RestController
 @RequestMapping("/cnss/AffiliationChangementEtat")
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class AffiliationChangementEtatRest {
 
-    @Autowired
-    private AffiliationChangementEtatService affiliationChangementEtatService;
+ @Autowired 
+ private AffiliationChangementEtatService affiliationChangementEtatService;
 
-    @Autowired
-    private AffiliationChangementEtatConverter affiliationChangementEtatConverter;
+ @Autowired 
+private AffiliationChangementEtatConverter affiliationChangementEtatConverter ;
 
-    @PostMapping("/")
-    public AffiliationChangementEtatVo save(@RequestBody AffiliationChangementEtatVo affiliationChangementEtatVo) {
-        AffiliationChangementEtat affiliationChangementEtat = affiliationChangementEtatConverter.toItem(affiliationChangementEtatVo);
-        return affiliationChangementEtatConverter.toVo(affiliationChangementEtatService.save(affiliationChangementEtat));
-    }
+@PostMapping("/")
+public AffiliationChangementEtatVo save(@RequestBody AffiliationChangementEtatVo affiliationChangementEtatVo){
+AffiliationChangementEtat affiliationChangementEtat= affiliationChangementEtatConverter.toItem(affiliationChangementEtatVo);
+return affiliationChangementEtatConverter.toVo(affiliationChangementEtatService.save(affiliationChangementEtat));
+}
+@DeleteMapping("/{id}")
+public void deleteById(@PathVariable Long id){
+affiliationChangementEtatService.deleteById(id);
+}
+@DeleteMapping("/{reference}")
+public void  deleteByReference(@PathVariable String  reference){
+affiliationChangementEtatService.deleteByReference(reference);
+}
+@GetMapping("/")
+public List<AffiliationChangementEtatVo> findAll(){
+return affiliationChangementEtatConverter.toVo(affiliationChangementEtatService.findAll());
+}
 
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id) {
-        affiliationChangementEtatService.deleteById(id);
-    }
+ public AffiliationChangementEtatConverter getAffiliationChangementEtatConverter(){
+return affiliationChangementEtatConverter;
+}
+ 
+ public void setAffiliationChangementEtatConverter(AffiliationChangementEtatConverter affiliationChangementEtatConverter){
+this.affiliationChangementEtatConverter=affiliationChangementEtatConverter;
+}
 
-    @DeleteMapping("/{reference}")
-    public void deleteByReference(@PathVariable String reference) {
-        affiliationChangementEtatService.deleteByReference(reference);
-    }
-
-    @GetMapping("/")
-    public List<AffiliationChangementEtatVo> findAll() {
-        return affiliationChangementEtatConverter.toVo(affiliationChangementEtatService.findAll());
-    }
-
-    public AffiliationChangementEtatConverter getAffiliationChangementEtatConverter() {
-        return affiliationChangementEtatConverter;
-    }
-
-    public void setAffiliationChangementEtatConverter(AffiliationChangementEtatConverter affiliationChangementEtatConverter) {
-        this.affiliationChangementEtatConverter = affiliationChangementEtatConverter;
-    }
-
-    public AffiliationChangementEtatService getAffiliationChangementEtatService() {
-        return affiliationChangementEtatService;
-    }
-
-    public void setAffiliationChangementEtatService(AffiliationChangementEtatService affiliationChangementEtatService) {
-        this.affiliationChangementEtatService = affiliationChangementEtatService;
-    }
+ public AffiliationChangementEtatService getAffiliationChangementEtatService(){
+return affiliationChangementEtatService;
+}
+ 
+ public void setAffiliationChangementEtatService(AffiliationChangementEtatService affiliationChangementEtatService){
+this.affiliationChangementEtatService=affiliationChangementEtatService;
+}
 
 }

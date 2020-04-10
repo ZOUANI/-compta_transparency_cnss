@@ -3,169 +3,184 @@ package com.zsmart.cnss.ws.rest.vo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SalarieVo {
 
-    private String id;
-    private String nom;
-    private String prenom;
-    private String dateNaissance;
-    private String dateNaissanceMin;
-    private String dateNaissanceMax;
-    private String sexe;
-    private String nationalite;
-    private String cin;
-    private String adresse;
-    private String codePostal;
-    private String ville;
-    private String email;
-    private String telNum;
-    private String numImmatriculation;
-    private AffilieVo dernierAffilieVo;
-    private ImmatriculationDemandeVo immatriculationDemandeVo;
-    private List<ImmatriculationChangementVo> immatriculationChangementsVo;
+public class SalarieVo{
 
-    public String getId() {
-        return id;
-    }
+private String id ;
+private String nom ;
+private String prenom ;
+private String dateNaissance;
+private String dateNaissanceMin ;
+private String dateNaissanceMax ;
+private String sexe ;
+private String nationalite ;
+private String cin ;
+private String adresse ;
+private String codePostal ;
+private String ville ;
+private String email ;
+private String telNum ;
+private String numImmatriculation ;
+private TypeSalarieVo typeSalarieVo ;
+private AffilieVo dernierAffilieVo ;
+private ImmatriculationDemandeVo immatriculationDemandeVo ;
+private List<ImmatriculationChangementVo>immatriculationChangementsVo;
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
-    public String getNom() {
-        return nom;
-    }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+public String  getId(){
+    return id;
+}
 
-    public String getPrenom() {
-        return prenom;
-    }
+public void setId(String  id){
+     this.id = id;
+}
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
+public String  getNom(){
+    return nom;
+}
 
-    public String getDateNaissance() {
-        return dateNaissance;
-    }
+public void setNom(String  nom){
+     this.nom = nom;
+}
 
-    public void setDateNaissance(String dateNaissance) {
-        this.dateNaissance = dateNaissance;
-    }
+public String  getPrenom(){
+    return prenom;
+}
 
-    public String getDateNaissanceMin() {
-        return dateNaissanceMin;
-    }
+public void setPrenom(String  prenom){
+     this.prenom = prenom;
+}
 
-    public void setDateNaissanceMin(String dateNaissanceMin) {
-        this.dateNaissanceMin = dateNaissanceMin;
-    }
+public String  getDateNaissance(){
+    return dateNaissance;
+}
 
-    public String getDateNaissanceMax() {
-        return dateNaissanceMax;
-    }
+public void setDateNaissance(String  dateNaissance){
+     this.dateNaissance = dateNaissance;
+}
 
-    public void setDateNaissanceMax(String dateNaissanceMax) {
-        this.dateNaissanceMax = dateNaissanceMax;
-    }
+public String  getDateNaissanceMin(){
+    return dateNaissanceMin;
+}
 
-    public String getSexe() {
-        return sexe;
-    }
+public void setDateNaissanceMin(String  dateNaissanceMin){
+     this.dateNaissanceMin = dateNaissanceMin;
+}
 
-    public void setSexe(String sexe) {
-        this.sexe = sexe;
-    }
+public String  getDateNaissanceMax(){
+    return dateNaissanceMax;
+}
 
-    public String getNationalite() {
-        return nationalite;
-    }
+public void setDateNaissanceMax(String  dateNaissanceMax){
+     this.dateNaissanceMax = dateNaissanceMax;
+}
 
-    public void setNationalite(String nationalite) {
-        this.nationalite = nationalite;
-    }
+public String  getSexe(){
+    return sexe;
+}
 
-    public String getCin() {
-        return cin;
-    }
+public void setSexe(String  sexe){
+     this.sexe = sexe;
+}
 
-    public void setCin(String cin) {
-        this.cin = cin;
-    }
+public String  getNationalite(){
+    return nationalite;
+}
 
-    public String getAdresse() {
-        return adresse;
-    }
+public void setNationalite(String  nationalite){
+     this.nationalite = nationalite;
+}
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
+public String  getCin(){
+    return cin;
+}
 
-    public String getCodePostal() {
-        return codePostal;
-    }
+public void setCin(String  cin){
+     this.cin = cin;
+}
 
-    public void setCodePostal(String codePostal) {
-        this.codePostal = codePostal;
-    }
+public String  getAdresse(){
+    return adresse;
+}
 
-    public String getVille() {
-        return ville;
-    }
+public void setAdresse(String  adresse){
+     this.adresse = adresse;
+}
 
-    public void setVille(String ville) {
-        this.ville = ville;
-    }
+public String  getCodePostal(){
+    return codePostal;
+}
 
-    public String getEmail() {
-        return email;
-    }
+public void setCodePostal(String  codePostal){
+     this.codePostal = codePostal;
+}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+public String  getVille(){
+    return ville;
+}
 
-    public String getTelNum() {
-        return telNum;
-    }
+public void setVille(String  ville){
+     this.ville = ville;
+}
 
-    public void setTelNum(String telNum) {
-        this.telNum = telNum;
-    }
+public String  getEmail(){
+    return email;
+}
 
-    public String getNumImmatriculation() {
-        return numImmatriculation;
-    }
+public void setEmail(String  email){
+     this.email = email;
+}
 
-    public void setNumImmatriculation(String numImmatriculation) {
-        this.numImmatriculation = numImmatriculation;
-    }
+public String  getTelNum(){
+    return telNum;
+}
 
-    public AffilieVo getDernierAffilieVo() {
-        return dernierAffilieVo;
-    }
+public void setTelNum(String  telNum){
+     this.telNum = telNum;
+}
 
-    public void setDernierAffilieVo(AffilieVo dernierAffilieVo) {
-        this.dernierAffilieVo = dernierAffilieVo;
-    }
+public String  getNumImmatriculation(){
+    return numImmatriculation;
+}
 
-    public ImmatriculationDemandeVo getImmatriculationDemandeVo() {
-        return immatriculationDemandeVo;
-    }
+public void setNumImmatriculation(String  numImmatriculation){
+     this.numImmatriculation = numImmatriculation;
+}
 
-    public void setImmatriculationDemandeVo(ImmatriculationDemandeVo immatriculationDemandeVo) {
-        this.immatriculationDemandeVo = immatriculationDemandeVo;
-    }
+public TypeSalarieVo  getTypeSalarieVo (){
+    return typeSalarieVo ;
+}
 
-    public List<ImmatriculationChangementVo> getImmatriculationChangementsVo() {
-        return immatriculationChangementsVo;
-    }
+public void setTypeSalarieVo (TypeSalarieVo  typeSalarieVo ){
+     this.typeSalarieVo  = typeSalarieVo ;
+}
 
-    public void setImmatriculationChangementsVo(List<ImmatriculationChangementVo> immatriculationChangementsVo) {
-        this.immatriculationChangementsVo = immatriculationChangementsVo;
-    }
+public AffilieVo  getDernierAffilieVo (){
+    return dernierAffilieVo ;
+}
+
+public void setDernierAffilieVo (AffilieVo  dernierAffilieVo ){
+     this.dernierAffilieVo  = dernierAffilieVo ;
+}
+
+public ImmatriculationDemandeVo  getImmatriculationDemandeVo (){
+    return immatriculationDemandeVo ;
+}
+
+public void setImmatriculationDemandeVo (ImmatriculationDemandeVo  immatriculationDemandeVo ){
+     this.immatriculationDemandeVo  = immatriculationDemandeVo ;
+}
+
+public List<ImmatriculationChangementVo> getImmatriculationChangementsVo(){
+    return immatriculationChangementsVo;
+}
+
+public void setImmatriculationChangementsVo(List<ImmatriculationChangementVo> immatriculationChangementsVo){
+     this.immatriculationChangementsVo = immatriculationChangementsVo;
+}
+
+
+
 
 }
